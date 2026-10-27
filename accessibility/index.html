@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Accessibility conformance report | Silverchain referrer portal</title>
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/png" href="../favicon.png">
+<style>
+@font-face{font-family:'Helvetica Rounded';font-weight:700;font-display:swap;src:url(../fonts/helvetica-rounded-bold.woff2) format('woff2')}
+@font-face{font-family:'Figtree';font-weight:300 900;font-display:swap;src:url(../fonts/figtree-latin-wght-normal.woff2) format('woff2')}
+:root{--navy:#00002D;--blue:#1059FF;--soft:#DADCF0;--paper:#F3F4F8;--ink:#00002D;--muted:#4F4F6B;--line:#D9DBE6;--ok:#0B6B52;--ok-soft:#E1F1EA;--display:'Helvetica Rounded','Arial Rounded MT Bold',system-ui,sans-serif;--body:'Figtree',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 var(--body)}
+.skip{position:absolute;left:12px;top:-60px;background:#fff;color:var(--navy);padding:10px 16px;border-radius:10px;font-weight:700;z-index:10}
+.skip:focus{top:12px}
+:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+header{background:var(--navy);color:#fff;padding:18px 20px}
+header :focus-visible{outline-color:#fff}
+.cobrand{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.cobrand img{height:30px;width:auto;display:block}
+.cobrand .sc{height:25px}
+.cobrand .x{color:rgba(255,255,255,.6);font-family:var(--display)}
+main{max-width:1000px;margin:0 auto;padding:32px 20px 56px}
+h1,h2,h3{font-family:var(--display);line-height:1.2;margin:0 0 .5rem}
+h1{font-size:2rem}
+h2{font-size:1.35rem;margin-top:36px;padding-top:8px}
+.lede{font-size:1.1rem;color:var(--muted);max-width:70ch}
+.hero{background:var(--navy);color:#fff;border-radius:22px;padding:30px;margin-bottom:24px}
+.hero .eyebrow{color:#9DB8FF;font-weight:700;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase}
+.hero h1{color:#fff;margin:8px 0}
+.hero p{color:var(--soft);margin:0;max-width:70ch}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:20px 0 0}
+.stat{background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px 16px}
+.stat .v{font-family:var(--display);font-size:1.8rem}
+.stat .k{color:var(--muted);font-size:.9rem}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin:12px 0}
+dl.meta{display:grid;grid-template-columns:200px 1fr;gap:6px 16px;margin:0}
+dl.meta dt{color:var(--muted);font-weight:600}
+dl.meta dd{margin:0}
+.tw{overflow-x:auto;background:#fff;border:1px solid var(--line);border-radius:16px;margin:12px 0}
+table{border-collapse:collapse;width:100%;font-size:.93rem}
+caption{text-align:left;padding:12px 14px 0;font-weight:700}
+th,td{padding:9px 14px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{background:#F7F8FB;font-weight:700}
+tr:last-child td{border-bottom:0}
+td.n{text-align:right;font-variant-numeric:tabular-nums}
+th.n{text-align:right}
+td.ok{color:var(--ok);font-weight:700}
+td.bad{color:#B00020;font-weight:700}
+td.sc,td.lvl{white-space:nowrap;font-variant-numeric:tabular-nums}
+.st{display:inline-block;border-radius:999px;padding:2px 10px;font-size:.82rem;font-weight:700;white-space:nowrap}
+.st.yes{background:var(--ok-soft);color:var(--ok)}
+.st.na{background:#ECEDF2;color:#3D3D55}
+ul.plain{padding-left:20px}
+.note{background:#EEF3FF;border-left:4px solid var(--blue);border-radius:10px;padding:12px 14px;margin:12px 0}
+.small{font-size:.88rem;color:var(--muted)}
+footer{max-width:1000px;margin:0 auto;padding:0 20px 32px;color:var(--muted);font-size:.85rem}
+@media (max-width:640px){dl.meta{grid-template-columns:1fr}.hero{padding:22px}h1{font-size:1.6rem}}
+@media print{body{background:#fff;font-size:11pt}.stats{grid-template-columns:repeat(4,1fr)}.dl{display:none}.skip{display:none}header{-webkit-print-color-adjust:exact;print-color-adjust:exact}.hero,.st,th{-webkit-print-color-adjust:exact;print-color-adjust:exact}main{padding:16px 0}h2{break-after:avoid}tr,.card,.stat{break-inside:avoid}.tw{overflow:visible;border-radius:0}@page{size:A4;margin:14mm 12mm}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header><div class="cobrand"><img src="../images/brand/max-logo-reversed.png" alt="Max Healthcare Equipment"><span class="x" aria-hidden="true">&times;</span><img class="sc" src="../images/brand/silverchain-logo-reversed.png" alt="Silverchain"></div></header>
+<main id="main">
+<section class="hero" aria-labelledby="t">
+  <span class="eyebrow">Accessibility conformance report</span>
+  <h1 id="t">Silverchain referrer portal</h1>
+  <p>Evidence of accessibility compliance for the Max Healthcare Equipment referrer portal proposed for Silverchain, assessed against the Web Content Accessibility Guidelines (WCAG) 2.1 at Level AA.</p>
+</section>
+<p class="dl"><a href="Max-Silverchain-Accessibility-Conformance-Report.pdf">Download this report as a PDF</a></p>
+
+<div class="stats" role="list">
+  <div class="stat" role="listitem"><div class="v">43 of 50</div><div class="k">WCAG 2.1 A and AA criteria supported. The other 7 do not apply (no audio, video or motion).</div></div>
+  <div class="stat" role="listitem"><div class="v">0</div><div class="k">Automated failures across 20 screens and dialogs, desktop and mobile</div></div>
+  <div class="stat" role="listitem"><div class="v">25 of 25</div><div class="k">Keyboard, focus, reflow and text spacing checks passed</div></div>
+  <div class="stat" role="listitem"><div class="v">35</div><div class="k">Distinct WCAG test rules run and passed</div></div>
+</div>
+
+<h2>Summary</h2>
+<div class="card"><dl class="meta">
+  <dt>Product</dt><dd>Max Healthcare Equipment referrer portal for Silverchain: access page and portal (catalogue, quotes, orders, proof of delivery, trials, hire to buy, invoices and statements)</dd>
+  <dt>Standard</dt><dd>WCAG 2.1, Level AA</dd>
+  <dt>Conformance</dt><dd>Supports WCAG 2.1 Level AA for the scope below</dd>
+  <dt>Report date</dt><dd>27 October 2026</dd>
+  <dt>Version tested</dt><dd>Tender demonstration build of the portal</dd>
+  <dt>Browsers and devices</dt><dd>Chromium (Chrome and Edge engine) at desktop 1280 x 900 and mobile 390 x 844, plus reflow at 320 and 640 CSS pixels</dd>
+  <dt>Contact</dt><dd>Max Healthcare Equipment, 1800 684 277, info@maxhealthcare.com.au</dd>
+</dl></div>
+
+<h2>How it was tested</h2>
+<ul class="plain">
+  <li><strong>Automated testing</strong> with axe-core 4.10.2 (Deque Systems), the engine behind Google Lighthouse and Microsoft Accessibility Insights. Rule sets: wcag2a, wcag2aa, wcag21a, wcag21aa. Run on every portal tab and on each dialog: order detail, proof of delivery, quote document and statement.</li>
+  <li><strong>Scripted manual checks</strong> covering keyboard-only operation, focus visibility and order, dialog focus management, error handling, reflow at 320px and WCAG text spacing overrides. Every check was repeated after each fix.</li>
+  <li><strong>Colour contrast</strong> measured with the WCAG relative luminance formula for text, status chips, focus rings and form field borders.</li>
+  <li><strong>Criterion-by-criterion review</strong> of all 50 WCAG 2.1 Level A and AA success criteria, recorded below.</li>
+</ul>
+<div class="note">Issues found during testing were fixed before this report was issued: green status chip contrast (4.41:1 raised to 5.55:1), form field border contrast (1.5:1 raised to 3.54:1), keyboard access to scrollable tables, focus returning to the control that opened a dialog, and keyboard access to individual orders.</div>
+
+<h2>Automated results by screen</h2>
+<div class="tw" tabindex="0" role="region" aria-label="Automated results by screen"><table>
+<thead><tr><th scope="col">Screen or dialog</th><th scope="col">Viewport</th><th scope="col" class="n">Rules passed</th><th scope="col" class="n">Failures</th></tr></thead>
+<tbody><tr><td>Access page</td><td>Desktop 1280 x 900</td><td class="n">20</td><td class="n ok">0</td></tr><tr><td>Catalogue</td><td>Desktop 1280 x 900</td><td class="n">28</td><td class="n ok">0</td></tr><tr><td>New quote and New order</td><td>Desktop 1280 x 900</td><td class="n">29</td><td class="n ok">0</td></tr><tr><td>Quotes</td><td>Desktop 1280 x 900</td><td class="n">27</td><td class="n ok">0</td></tr><tr><td>Quote document (PDF view)</td><td>Desktop 1280 x 900</td><td class="n">29</td><td class="n ok">0</td></tr><tr><td>Orders</td><td>Desktop 1280 x 900</td><td class="n">29</td><td class="n ok">0</td></tr><tr><td>Order detail with proof of delivery</td><td>Desktop 1280 x 900</td><td class="n">32</td><td class="n ok">0</td></tr><tr><td>Order arriving from supplier</td><td>Desktop 1280 x 900</td><td class="n">30</td><td class="n ok">0</td></tr><tr><td>Trials</td><td>Desktop 1280 x 900</td><td class="n">31</td><td class="n ok">0</td></tr><tr><td>Hire to buy</td><td>Desktop 1280 x 900</td><td class="n">30</td><td class="n ok">0</td></tr><tr><td>Invoices</td><td>Desktop 1280 x 900</td><td class="n">27</td><td class="n ok">0</td></tr><tr><td>Account statement</td><td>Desktop 1280 x 900</td><td class="n">28</td><td class="n ok">0</td></tr><tr><td>Access page</td><td>Mobile 390 x 844</td><td class="n">20</td><td class="n ok">0</td></tr><tr><td>Catalogue</td><td>Mobile 390 x 844</td><td class="n">29</td><td class="n ok">0</td></tr><tr><td>New quote and New order</td><td>Mobile 390 x 844</td><td class="n">30</td><td class="n ok">0</td></tr><tr><td>Quotes</td><td>Mobile 390 x 844</td><td class="n">27</td><td class="n ok">0</td></tr><tr><td>Orders</td><td>Mobile 390 x 844</td><td class="n">30</td><td class="n ok">0</td></tr><tr><td>Trials</td><td>Mobile 390 x 844</td><td class="n">32</td><td class="n ok">0</td></tr><tr><td>Hire to buy</td><td>Mobile 390 x 844</td><td class="n">31</td><td class="n ok">0</td></tr><tr><td>Invoices</td><td>Mobile 390 x 844</td><td class="n">28</td><td class="n ok">0</td></tr></tbody></table></div>
+<p class="small">Rules run and passed: aria-allowed-attr, aria-conditional-attr, aria-deprecated-role, aria-hidden-body, aria-hidden-focus, aria-prohibited-attr, aria-required-attr, aria-required-children, aria-required-parent, aria-roles, aria-valid-attr, aria-valid-attr-value, autocomplete-valid, avoid-inline-spacing, button-name, bypass, color-contrast, document-title, duplicate-id-aria, form-field-multiple-labels, html-has-lang, html-lang-valid, image-alt, label, link-in-text-block, link-name, list, listitem, meta-viewport, nested-interactive, scrollable-region-focusable, select-name, svg-img-alt, td-headers-attr, th-has-data-cells.</p>
+
+<h2>Keyboard, focus and layout checks</h2>
+<div class="tw" tabindex="0" role="region" aria-label="Keyboard, focus and layout checks"><table>
+<thead><tr><th scope="col">Check</th><th scope="col">Result</th></tr></thead>
+<tbody><tr><td>First Tab lands on the skip link</td><td class="ok">Pass</td></tr><tr><td>Skip link has a visible focus ring</td><td class="ok">Pass</td></tr><tr><td>Skip link moves focus to the portal content</td><td class="ok">Pass</td></tr><tr><td>Visible focus indicator on the first 60 Tab stops</td><td class="ok">Pass</td></tr><tr><td>Focus stays on the Orders tab after it opens</td><td class="ok">Pass</td></tr><tr><td>Order opens from the keyboard</td><td class="ok">Pass</td></tr><tr><td>Focus moves into the dialog</td><td class="ok">Pass</td></tr><tr><td>Dialog has an accessible name</td><td class="ok">Pass</td></tr><tr><td>Tab stays inside the open dialog</td><td class="ok">Pass</td></tr><tr><td>Escape closes the dialog and returns focus to the order</td><td class="ok">Pass</td></tr><tr><td>Missing required field gets focus and is marked invalid</td><td class="ok">Pass</td></tr><tr><td>Error message is in a status live region</td><td class="ok">Pass</td></tr><tr><td>Reflow at 320px, catalogue: no sideways page scroll</td><td class="ok">Pass</td></tr><tr><td>Reflow at 320px, quote: no sideways page scroll</td><td class="ok">Pass</td></tr><tr><td>Reflow at 320px, orders: no sideways page scroll</td><td class="ok">Pass</td></tr><tr><td>Reflow at 320px, trial: no sideways page scroll</td><td class="ok">Pass</td></tr><tr><td>Reflow at 320px, invoices: no sideways page scroll</td><td class="ok">Pass</td></tr><tr><td>Reflow at 640px, catalogue: no sideways page scroll</td><td class="ok">Pass</td></tr><tr><td>Reflow at 640px, quote: no sideways page scroll</td><td class="ok">Pass</td></tr><tr><td>Reflow at 640px, orders: no sideways page scroll</td><td class="ok">Pass</td></tr><tr><td>Reflow at 640px, trial: no sideways page scroll</td><td class="ok">Pass</td></tr><tr><td>Reflow at 640px, invoices: no sideways page scroll</td><td class="ok">Pass</td></tr><tr><td>Text spacing override, catalogue: no clipped text</td><td class="ok">Pass</td></tr><tr><td>Text spacing override, orders: no clipped text</td><td class="ok">Pass</td></tr><tr><td>Text spacing override, trial: no clipped text</td><td class="ok">Pass</td></tr></tbody></table></div>
+
+<h2>WCAG 2.1 Level A and AA criteria</h2>
+<div class="tw" tabindex="0" role="region" aria-label="WCAG 2.1 success criteria"><table>
+<thead><tr><th scope="col">Criterion</th><th scope="col">Name</th><th scope="col">Level</th><th scope="col">Status</th><th scope="col">How the portal meets it</th></tr></thead>
+<tbody><tr><td class="sc">1.1.1</td><td><strong>Non-text content</strong></td><td class="lvl">A</td><td><span class="st yes">Supports</span></td><td>Logos and photos have text alternatives. Product thumbnails sit beside the product name and are marked decorative. Delivery signatures are exposed as images named &quot;Signature of ...&quot;. Delivery photos carry captions.</td></tr><tr><td class="sc">1.2.1</td><td><strong>Audio-only and video-only (prerecorded)</strong></td><td class="lvl">A</td><td><span class="st na">Not applicable</span></td><td>The portal has no audio or video.</td></tr><tr><td class="sc">1.2.2</td><td><strong>Captions (prerecorded)</strong></td><td class="lvl">A</td><td><span class="st na">Not applicable</span></td><td>No video.</td></tr><tr><td class="sc">1.2.3</td><td><strong>Audio description or media alternative</strong></td><td class="lvl">A</td><td><span class="st na">Not applicable</span></td><td>No video.</td></tr><tr><td class="sc">1.2.4</td><td><strong>Captions (live)</strong></td><td class="lvl">AA</td><td><span class="st na">Not applicable</span></td><td>No live media.</td></tr><tr><td class="sc">1.2.5</td><td><strong>Audio description (prerecorded)</strong></td><td class="lvl">AA</td><td><span class="st na">Not applicable</span></td><td>No video.</td></tr><tr><td class="sc">1.3.1</td><td><strong>Info and relationships</strong></td><td class="lvl">A</td><td><span class="st yes">Supports</span></td><td>Real headings, data tables with header cells, form fields grouped in fieldsets with legends, and every field has a programmatic label.</td></tr><tr><td class="sc">1.3.2</td><td><strong>Meaningful sequence</strong></td><td class="lvl">A</td><td><span class="st yes">Supports</span></td><td>Reading order in the code matches the visual order at every screen size.</td></tr><tr><td class="sc">1.3.3</td><td><strong>Sensory characteristics</strong></td><td class="lvl">A</td><td><span class="st yes">Supports</span></td><td>Instructions never rely on shape, colour, size or position alone.</td></tr><tr><td class="sc">1.3.4</td><td><strong>Orientation</strong></td><td class="lvl">AA</td><td><span class="st yes">Supports</span></td><td>Works in portrait and landscape. Nothing is locked to one orientation.</td></tr><tr><td class="sc">1.3.5</td><td><strong>Identify input purpose</strong></td><td class="lvl">AA</td><td><span class="st yes">Supports</span></td><td>Fields about the signed-in user (contact name, email) carry autocomplete tokens. Client fields deliberately do not, as they describe another person.</td></tr><tr><td class="sc">1.4.1</td><td><strong>Use of colour</strong></td><td class="lvl">A</td><td><span class="st yes">Supports</span></td><td>Every status colour is paired with a text label, for example &quot;On trial, decision required&quot; and &quot;Arriving from supplier&quot;.</td></tr><tr><td class="sc">1.4.2</td><td><strong>Audio control</strong></td><td class="lvl">A</td><td><span class="st na">Not applicable</span></td><td>No audio.</td></tr><tr><td class="sc">1.4.3</td><td><strong>Contrast (minimum)</strong></td><td class="lvl">AA</td><td><span class="st yes">Supports</span></td><td>All text meets 4.5:1 (large text 3:1). Automated contrast checks pass on every view. Status chip colours were darkened during testing to clear the threshold (green chip now 5.55:1).</td></tr><tr><td class="sc">1.4.4</td><td><strong>Resize text</strong></td><td class="lvl">AA</td><td><span class="st yes">Supports</span></td><td>Text resizes to 200% without loss of content or function. Layout reflows rather than clipping.</td></tr><tr><td class="sc">1.4.5</td><td><strong>Images of text</strong></td><td class="lvl">AA</td><td><span class="st yes">Supports</span></td><td>No images of text other than the Max and Silverchain logos, which are exempt.</td></tr><tr><td class="sc">1.4.10</td><td><strong>Reflow</strong></td><td class="lvl">AA</td><td><span class="st yes">Supports</span></td><td>No sideways page scrolling at 320 CSS pixels (equivalent to 400% zoom). Wide data tables scroll inside a keyboard-focusable region, which WCAG permits for two-dimensional content.</td></tr><tr><td class="sc">1.4.11</td><td><strong>Non-text contrast</strong></td><td class="lvl">AA</td><td><span class="st yes">Supports</span></td><td>Form field borders are 3.54:1 against white and focus rings are 5.89:1. Selected states use a 2px red outline and a tinted background.</td></tr><tr><td class="sc">1.4.12</td><td><strong>Text spacing</strong></td><td class="lvl">AA</td><td><span class="st yes">Supports</span></td><td>Tested with WCAG text spacing overrides (line height 1.5, letter spacing 0.12em, word spacing 0.16em, paragraph spacing 2em). No text is clipped or overlaps.</td></tr><tr><td class="sc">1.4.13</td><td><strong>Content on hover or focus</strong></td><td class="lvl">AA</td><td><span class="st yes">Supports</span></td><td>The portal shows no custom hover or focus pop-ups.</td></tr><tr><td class="sc">2.1.1</td><td><strong>Keyboard</strong></td><td class="lvl">A</td><td><span class="st yes">Supports</span></td><td>Every action can be done from the keyboard: tabs, catalogue, quote builder, order detail, proof of delivery photos, trial decisions, payments and the quote PDF.</td></tr><tr><td class="sc">2.1.2</td><td><strong>No keyboard trap</strong></td><td class="lvl">A</td><td><span class="st yes">Supports</span></td><td>Dialogs keep focus inside while open, as intended, and always close with Escape or the Close button.</td></tr><tr><td class="sc">2.1.4</td><td><strong>Character key shortcuts</strong></td><td class="lvl">A</td><td><span class="st yes">Supports</span></td><td>No single-key shortcuts.</td></tr><tr><td class="sc">2.2.1</td><td><strong>Timing adjustable</strong></td><td class="lvl">A</td><td><span class="st yes">Supports</span></td><td>No time limits. Confirmation messages are also reflected in the page itself, for example a new order appearing in Orders.</td></tr><tr><td class="sc">2.2.2</td><td><strong>Pause, stop, hide</strong></td><td class="lvl">A</td><td><span class="st yes">Supports</span></td><td>Nothing moves, blinks or auto-updates.</td></tr><tr><td class="sc">2.3.1</td><td><strong>Three flashes or below threshold</strong></td><td class="lvl">A</td><td><span class="st yes">Supports</span></td><td>No flashing content.</td></tr><tr><td class="sc">2.4.1</td><td><strong>Bypass blocks</strong></td><td class="lvl">A</td><td><span class="st yes">Supports</span></td><td>&quot;Skip to portal content&quot; link as the first focusable element, plus header and main landmarks.</td></tr><tr><td class="sc">2.4.2</td><td><strong>Page titled</strong></td><td class="lvl">A</td><td><span class="st yes">Supports</span></td><td>Each page has a descriptive title.</td></tr><tr><td class="sc">2.4.3</td><td><strong>Focus order</strong></td><td class="lvl">A</td><td><span class="st yes">Supports</span></td><td>Focus follows a logical order. After a tab or filter updates the screen, focus stays on the control used. Opening a dialog moves focus into it, and closing it returns focus to the control that opened it.</td></tr><tr><td class="sc">2.4.4</td><td><strong>Link purpose (in context)</strong></td><td class="lvl">A</td><td><span class="st yes">Supports</span></td><td>Every button and link has a clear name. Repeated buttons name their target, for example &quot;Hire Toilet seat raiser&quot; and &quot;Open order 70540 for Patricia Moore&quot;.</td></tr><tr><td class="sc">2.4.5</td><td><strong>Multiple ways</strong></td><td class="lvl">AA</td><td><span class="st yes">Supports</span></td><td>Every area is reachable from the tab bar, and the catalogue, quote builder and orders all have search.</td></tr><tr><td class="sc">2.4.6</td><td><strong>Headings and labels</strong></td><td class="lvl">AA</td><td><span class="st yes">Supports</span></td><td>Headings and field labels describe their content, for example &quot;Client PID&quot; and &quot;Preferred date&quot;.</td></tr><tr><td class="sc">2.4.7</td><td><strong>Focus visible</strong></td><td class="lvl">AA</td><td><span class="st yes">Supports</span></td><td>A 3px focus ring on every focusable element, white on the navy header. Verified on the first 60 tab stops.</td></tr><tr><td class="sc">2.5.1</td><td><strong>Pointer gestures</strong></td><td class="lvl">A</td><td><span class="st yes">Supports</span></td><td>No multi-point or path-based gestures.</td></tr><tr><td class="sc">2.5.2</td><td><strong>Pointer cancellation</strong></td><td class="lvl">A</td><td><span class="st yes">Supports</span></td><td>Actions fire on release (standard click), never on press.</td></tr><tr><td class="sc">2.5.3</td><td><strong>Label in name</strong></td><td class="lvl">A</td><td><span class="st yes">Supports</span></td><td>Where a button has an extended accessible name, it begins with or contains the visible text.</td></tr><tr><td class="sc">2.5.4</td><td><strong>Motion actuation</strong></td><td class="lvl">A</td><td><span class="st na">Not applicable</span></td><td>No motion-triggered features.</td></tr><tr><td class="sc">3.1.1</td><td><strong>Language of page</strong></td><td class="lvl">A</td><td><span class="st yes">Supports</span></td><td>Page language set to Australian English (en-AU).</td></tr><tr><td class="sc">3.1.2</td><td><strong>Language of parts</strong></td><td class="lvl">AA</td><td><span class="st yes">Supports</span></td><td>All content is in English.</td></tr><tr><td class="sc">3.2.1</td><td><strong>On focus</strong></td><td class="lvl">A</td><td><span class="st yes">Supports</span></td><td>Focusing a control never changes context.</td></tr><tr><td class="sc">3.2.2</td><td><strong>On input</strong></td><td class="lvl">A</td><td><span class="st yes">Supports</span></td><td>Changing a filter or the trial location updates content in place without moving the user elsewhere.</td></tr><tr><td class="sc">3.2.3</td><td><strong>Consistent navigation</strong></td><td class="lvl">AA</td><td><span class="st yes">Supports</span></td><td>Header, New quote and New order buttons and tab bar are in the same place on every screen.</td></tr><tr><td class="sc">3.2.4</td><td><strong>Consistent identification</strong></td><td class="lvl">AA</td><td><span class="st yes">Supports</span></td><td>The same functions use the same names throughout, for example &quot;Client PID&quot;.</td></tr><tr><td class="sc">3.3.1</td><td><strong>Error identification</strong></td><td class="lvl">A</td><td><span class="st yes">Supports</span></td><td>Missing required fields are named in a status message, marked invalid (aria-invalid) and the first one receives focus.</td></tr><tr><td class="sc">3.3.2</td><td><strong>Labels or instructions</strong></td><td class="lvl">A</td><td><span class="st yes">Supports</span></td><td>Every field has a visible label. Required fields are marked with an asterisk, explained above the form, and announced as required.</td></tr><tr><td class="sc">3.3.3</td><td><strong>Error suggestion</strong></td><td class="lvl">AA</td><td><span class="st yes">Supports</span></td><td>Messages say exactly what to add, for example &quot;Add the client name, PID and delivery address.&quot;</td></tr><tr><td class="sc">3.3.4</td><td><strong>Error prevention (legal, financial, data)</strong></td><td class="lvl">AA</td><td><span class="st yes">Supports</span></td><td>Approving a quote, buying hired equipment, booking a trial return and paying an invoice all need a separate confirmation. Quotes can be edited until they are approved.</td></tr><tr><td class="sc">4.1.1</td><td><strong>Parsing</strong></td><td class="lvl">A</td><td><span class="st yes">Supports</span></td><td>Valid, well-formed markup with no duplicate IDs. (This criterion is always satisfied under WCAG 2.1 errata.)</td></tr><tr><td class="sc">4.1.2</td><td><strong>Name, role, value</strong></td><td class="lvl">A</td><td><span class="st yes">Supports</span></td><td>Custom controls expose their role and state: tabs (aria-selected), colour swatches (aria-pressed), dialogs (aria-modal with a name) and scrollable tables (named regions).</td></tr><tr><td class="sc">4.1.3</td><td><strong>Status messages</strong></td><td class="lvl">AA</td><td><span class="st yes">Supports</span></td><td>Confirmations and errors are announced through a polite live region (role=&quot;status&quot;) without moving focus.</td></tr></tbody></table></div>
+
+<h2>Built-in accessibility features</h2>
+<ul class="plain">
+  <li>Skip link, landmarks and a logical heading structure on every screen.</li>
+  <li>Full keyboard operation, with a visible focus ring and focus kept in place as content updates.</li>
+  <li>Dialogs that take focus, keep it while open, close with Escape and return focus afterwards.</li>
+  <li>Plain English status labels, never colour alone, for example "Arriving from supplier" instead of "Backorder".</li>
+  <li>Required fields marked and announced, with clear error messages and focus moved to the field that needs attention.</li>
+  <li>Responsive layout that reflows to a 320px wide screen, so it works on a phone and at 400% zoom.</li>
+  <li>Large touch targets: buttons are at least 44px high.</li>
+</ul>
+
+<h2>Ongoing commitment</h2>
+<ul class="plain">
+  <li>Every release is re-tested with the same automated and keyboard checks before it reaches Silverchain users.</li>
+  <li>Before go-live Max will complete assistive technology testing with NVDA on Windows and VoiceOver on iOS, and will share the results with Silverchain.</li>
+  <li>Accessibility feedback or problems can be reported to Max on 1800 684 277 or info@maxhealthcare.com.au and will be acknowledged within two business days.</li>
+</ul>
+</main>
+<footer>Max Healthcare Equipment, 7 Marlow Road, Keswick SA 5035. ABN 58 046 204 299. <a href="../">Back to the Silverchain portal</a></footer>
+</body>
+</html>
