@@ -678,6 +678,8 @@ function seed(){
         {id:'Q-3069',client:'Patricia Moore',pid:'2987734',phone:'0400 919 455',address:'5 Kauri Parade, Seaton SA 5023',funding:'Support at Home',items:[{pid:'p2',mode:'hire',qty:1,note:'',vars:{'Seat width':'46cm (18in)'}},{pid:'p4',mode:'hire',qty:1,note:''}],status:'Approved',created:today(-72),rev:1,order:'70540'},
         {id:'Q-3077',client:'Lyn Fraser',pid:'3012456',phone:'0400 717 330',address:'31 Greenhill Road, Unley SA 5061',funding:'Support at Home',items:[{pid:'p3',mode:'buy',qty:1,note:''}],status:'Approved',created:today(-22),rev:1,order:'70552'},
         {id:'Q-3083',client:'Mavis Reid',pid:'3066021',phone:'0400 303 141',address:'6 Coorara Avenue, Payneham South SA 5070',funding:'TCP',items:[{pid:'p1',mode:'hire',qty:1,note:'',vars:{'Colour':'Blue','Handle height':'Standard'}},{pid:'p4',mode:'hire',qty:1,note:''}],status:'Approved',created:today(-40),rev:1,order:'70618'},
+        {id:'Q-3086',client:'Joyce Hamilton',pid:'3069954',phone:'0400 380 512',address:'8 Gawler Street, Mount Barker SA 5251',funding:'Support at Home',items:[{pid:'p10',mode:'hire',qty:1,note:'',vars:{'Size':'Single'}},{pid:'p6',mode:'hire',qty:1,note:'',vars:{'Size':'41 x 41cm'}}],status:'Approved',created:today(-33),rev:1,order:'70631'},
+        {id:'Q-3091',client:'Frank Ellery',pid:'3074402',phone:'0400 129 664',address:'51 Military Road, Semaphore SA 5019',funding:'CHSP',items:[{pid:'p1',mode:'hire',qty:1,note:'',vars:{'Colour':'Black','Handle height':'Tall'}},{pid:'p3',mode:'buy',qty:1,note:''}],status:'Approved',created:today(-17),rev:1,order:'70655'},
         {id:'Q-3096',client:'Ken Wallace',pid:'3079915',phone:'0400 262 919',address:'44 Hectorville Road, Hectorville SA 5073',funding:'TCP',items:[{pid:'p2',mode:'hire',qty:1,note:'',vars:{'Seat width':'51cm (20in)'}},{pid:'p3',mode:'hire',qty:1,note:''}],status:'Approved',created:today(-8),rev:1,order:'70677'},
         {id:'Q-3098',client:'Beryl Thompson',pid:'3081472',phone:'0400 848 112',address:'Unit 2, 11 Fourth Avenue, St Peters SA 5069',funding:'Support at Home',items:[{pid:'p10',mode:'hire',qty:1,note:'Bedroom is upstairs, two people for delivery',vars:{'Size':'King single'}},{pid:'p6',mode:'hire',qty:1,note:'',vars:{'Size':'46 x 46cm'}}],status:'Approved',created:today(-4),rev:2,revised:today(-3),order:'70684'},
         {id:'Q-3100',client:'Harold Simms',pid:'3083308',phone:'0400 616 404',address:'27 Murray Street, Clovelly Park SA 5042',funding:'CHSP',items:[{pid:'p1',mode:'buy',qty:1,note:'',vars:{'Colour':'Red','Handle height':'Tall'}},{pid:'p4',mode:'buy',qty:1,note:''}],status:'Approved',created:today(-3),rev:1,order:'70689'},
@@ -689,6 +691,8 @@ function seed(){
         {id:'70540',quote:'Q-3069',status:'On hire',created:today(-71),delivery:today(-70),window:'AM (8am to 12pm)',signer:'Tony Moore (son)'},
         {id:'70552',quote:'Q-3077',status:'Delivered',created:today(-20),delivery:today(-19),window:'AM (8am to 12pm)'},
         {id:'70618',quote:'Q-3083',status:'Collected',created:today(-38),delivery:today(-37),window:'AM (8am to 12pm)',collected:today(-9)},
+        {id:'70631',quote:'Q-3086',status:'On hire',created:today(-31),delivery:today(-29),window:'AM (8am to 12pm)'},
+        {id:'70655',quote:'Q-3091',status:'On hire',created:today(-16),delivery:today(-15),window:'PM (12pm to 5pm)'},
         {id:'70677',quote:'Q-3096',status:'On hire',created:today(-7),delivery:today(-6),window:'PM (12pm to 5pm)'},
         {id:'70684',quote:'Q-3098',status:'Out for delivery',created:today(-3),delivery:today(),window:'AM (8am to 12pm)',driver:'Dean K.'},
         {id:'70689',quote:'Q-3100',status:'Being prepared',created:today(-1),delivery:nextWorkingDay(),window:'PM (12pm to 5pm)'},
@@ -732,7 +736,7 @@ function seed(){
 }
 var S;
 var TENDER=true;
-var KEY='maxhc-silverchain-demo-v2'+(TENDER?'-tender':'');
+var KEY='maxhc-silverchain-demo-v3'+(TENDER?'-tender':'');
 try{var raw=localStorage.getItem(KEY);S=raw?JSON.parse(raw):null;}catch(e){S=null;}
 if(!S||S.v!==5)seed();
 function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
@@ -1270,8 +1274,8 @@ function draftBar(){
 function renderReferrer(){
   var r=S.referrer;
   var head='<div class="brand">'+cobrand()+'<span class="sub">Referrer portal</span></div>'+'<div class="quick"><button class="btn sm primary" data-action="rNewQuote">New quote</button><button class="btn sm" data-action="rNewOrder">New order</button></div><div class="who"><strong>'+esc(r.user)+'</strong><br><span class="muted">'+esc(r.org)+'</span></div>';
-  var tabs=tabBar([['catalogue','Catalogue'],['quote',(r.editing?'Editing '+r.editing:r.direct?'New order':'New quote'),r.draft.length||''],['quotes','Quotes'],['orders','Orders'],['trial','Trials',trialsDue().length||''],['h2p','Hire to buy'],['invoices','Invoices']],r.tab,'rTab');
-  var body=actionBanner()+(r.tab==='catalogue'?draftBar()+catalogue('rf',r.q,r.cat,CONTRACT_RATE):r.tab==='quote'?quoteBuilder():r.tab==='quotes'?quotesView():r.tab==='orders'?ordersView():r.tab==='h2p'?h2pView():r.tab==='trial'?trialView():invoicesView());
+  var tabs=tabBar([['catalogue','Catalogue'],['quote',(r.editing?'Editing '+r.editing:r.direct?'New order':'New quote'),r.draft.length||''],['quotes','Quotes'],['orders','Orders'],['rentals','Active rentals',activeRentals().length||''],['trial','Trials',trialsDue().length||''],['h2p','Hire to buy'],['invoices','Invoices']],r.tab,'rTab');
+  var body=actionBanner()+(r.tab==='catalogue'?draftBar()+catalogue('rf',r.q,r.cat,CONTRACT_RATE):r.tab==='quote'?quoteBuilder():r.tab==='quotes'?quotesView():r.tab==='orders'?ordersView():r.tab==='rentals'?rentalsView():r.tab==='h2p'?h2pView():r.tab==='trial'?trialView():invoicesView());
   return frame('portal.maxhealthcare.com.au/partner/silverchain-m4q1z8',head,tabs,body);
 }
 function inCat(p,cat){return !cat||p.cat===cat||p.also===cat;}
@@ -1378,6 +1382,24 @@ function showOrder(id){
     (isDelivered(o)?podBlock(o,q):'')+
     (hire&&(o.status==='On hire'||o.status==='Delivered')?'<div class="notice info" style="margin-top:14px">Want to keep this equipment? See the price to buy it in <button class="linkbtn" data-action="goH2p" style="padding:0">Hire to buy</button>.</div>':'')+
     '<div class="row" style="margin-top:16px">'+(q.direct?'':'<button class="btn" data-action="viewQuote" data-v="'+q.id+'">View quote '+q.id+'</button>')+'<button class="btn" data-action="closeModal">Close</button></div>');
+}
+function activeRentals(){
+  var rows=[];
+  S.referrer.orders.forEach(function(o){if(o.status!=='On hire'&&o.status!=='Delivered')return;var q=findQuote(o.quote);
+    var items=q.items.filter(function(it){return it.mode==='hire';});if(!items.length)return;
+    var weekly=r2(sum(items.map(function(it){return unitPrice(it)*it.qty;}))),wk=Math.max(1,Math.ceil(daysSince(o.delivery)/7));
+    rows.push({o:o,q:q,items:items,weekly:weekly,weeks:wk,paid:r2(weekly*wk)});});
+  return rows.sort(function(a,b){return a.o.delivery>b.o.delivery?1:-1;});
+}
+function rentalsView(){
+  var all=activeRentals(),sq=(S.referrer.rs||'').toLowerCase().trim();
+  var rows=all.filter(function(x){return !sq||(x.o.id+' '+x.q.client+' '+(x.q.pid||'')).toLowerCase().indexOf(sq)>-1;});
+  var h='<div class="row between" style="margin-bottom:12px"><div><h2 style="margin:0">Active rentals</h2><span class="small muted">Everything your clients have on hire from Max right now.</span></div><input type="search" id="r_search" placeholder="Search client, PID or order" value="'+esc(S.referrer.rs||'')+'" data-input="rRentSearch" aria-label="Search rentals by client, PID or order number" style="max-width:280px"></div>';
+  h+='<div class="tiles"><div class="tile" style="cursor:default"><div class="k">On hire</div><div class="v">'+all.length+'</div><div class="s">'+(all.length===1?'order':'orders')+'</div></div><div class="tile" style="cursor:default"><div class="k">Weekly hire</div><div class="v">'+money(sum(all.map(function(x){return x.weekly;})))+'</div><div class="s">across all rentals</div></div><div class="tile" style="cursor:default"><div class="k">Rental fees paid</div><div class="v">'+money(sum(all.map(function(x){return x.paid;})))+'</div><div class="s">to date</div></div></div>';
+  if(!rows.length)return h+'<div class="empty"><strong>'+(all.length?'No rentals match your search':'Nothing on hire right now')+'</strong>Hired equipment shows here once it is delivered.</div>';
+  return h+'<div class="tablewrap" tabindex="0" role="region" aria-label="Table, scrolls sideways on small screens"><table><thead><tr><th>Order</th><th>Client</th><th>Item(s)</th><th>On hire from</th><th class="num">Weeks hired</th><th class="num">Rental fees paid</th></tr></thead><tbody>'+
+    rows.map(function(x){return '<tr class="click" data-action="viewOrder" data-v="'+x.o.id+'"><td><button type="button" class="linkbtn obtn" data-action="viewOrder" data-v="'+x.o.id+'" aria-label="Open order '+x.o.id+' for '+esc(x.q.client)+'">'+x.o.id+'</button></td><td>'+esc(x.q.client)+'<div class="small muted pid">PID '+esc(x.q.pid||'')+'</div></td><td class="small">'+itemsText({items:x.items})+'</td><td>'+fmtDate(x.o.delivery)+'</td><td class="num">'+x.weeks+'</td><td class="num"><strong>'+money(x.paid)+'</strong><div class="small muted">'+money(x.weekly)+' a week</div></td></tr>';}).join('')+
+    '</tbody></table></div><p class="small muted" style="margin-top:8px">Hire is charged weekly in advance from the delivery date. Select a rental to see the order and proof of delivery, or see the price to keep it in <button class="linkbtn" data-action="rTab" data-v="h2p" style="padding:0">Hire to buy</button>.</p>';
 }
 var H2P_KEEP=0.35;
 function daysSince(s){var p=s.split('-');var d=new Date(+p[0],+p[1]-1,+p[2]);var t=new Date();t.setHours(0,0,0,0);return Math.round((t-d)/86400000);}
@@ -1936,6 +1958,7 @@ document.addEventListener('input',function(e){
     if(k==='rfSearch')S.referrer.q=t.value;
     if(k==='rqSearch')S.referrer.qs=t.value;
     if(k==='rOrdSearch')S.referrer.os=t.value;
+    if(k==='rRentSearch')S.referrer.rs=t.value;
     if(k==='h2pWeeks'){S.referrer.calc=S.referrer.calc||{pid:'p2'};S.referrer.calc.weeks=Math.min(104,Math.max(1,parseInt(t.value,10)||1));}
     if(k==='rQty'){var it=S.referrer.draft[Number(t.getAttribute('data-v'))];it.qty=Math.max(1,parseInt(t.value,10)||1);}
     save();S._keepScroll=true;renderKeepFocus(t.id||null,k,t.getAttribute('data-v'));
